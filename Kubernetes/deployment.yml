@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: jenkins-cicd
+  name: utube-model
   labels:
-    app: jenkins-cicd
+    app: utube-model
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: jenkins-cicd
+      app: utube-model
   template:
     metadata:
       labels:
-        app: jenkins-cicd
+        app: utube-model
     spec:
       terminationGracePeriodSeconds: 30
       containers:
-      - name: jenkins-cicd
-        image: shalinichandru/jenkins-cicd:latest
+      - name: utube-model
+        image: shalinichandru/utube-model:latest
         imagePullPolicy: "Always"
         ports:
         - containerPort: 3000
